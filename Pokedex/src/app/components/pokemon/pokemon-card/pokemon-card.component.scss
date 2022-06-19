@@ -1,0 +1,17 @@
+.pokemon-card {
+    padding:1em;
+    margin: 0.5em;
+    width: 8em;
+    border-width: 0.2em;
+    border-style: solid;
+    border-radius: 10%;
+    border-color: black;
+    text-align: center;
+    
+    cursor: pointer;
+    user-select: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}

@@ -1,0 +1,17 @@
+.paginator {
+    display: flex;
+    flex-direction: row
+}
+
+.paginator-element{
+    padding: 0.6em;
+    user-select: none;
+   -webkit-user-select: none;
+   -khtml-user-select: none;
+   -moz-user-select: none;
+   -ms-user-select: none;
+}
+
+.paginator-arrows {
+    cursor: pointer;
+}

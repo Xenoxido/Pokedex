@@ -1,0 +1,18 @@
+<div class="header" (click)="OnClickTitle()">  <!--Header-->
+    <h1>Pokemon List</h1>
+</div>
+
+<div> <!--Body-->
+    <h2 *ngIf="loading"> Loading...</h2>
+    <div class="pokemon-list" *ngIf="!loading && !showDetail" >
+        <app-pokemon-card *ngFor="let pokemon of pokeList" [pokemon]="pokemon" (selectPokemon)="OnClickPokemon($event)"></app-pokemon-card>
+    </div>
+
+    <div class="pokemon-card" *ngIf="!loading && showDetail">
+        <app-pokemon-detail [pokemon]="pokemonSelected"></app-pokemon-detail>
+    </div>
+</div>
+
+<div class="footer"> <!--Footer-->
+    <app-paginator *ngIf="!showDetail" [firstElement]="first" [lastElement]="first + pokemonPerPage" [step]="pokemonPerPage" [limitPrev]="limitPokemon[0]" [limitNext]="limitPokemon[1]" (pageChanged)="OnrefreshPokemonList($event)"></app-paginator>
+</div>

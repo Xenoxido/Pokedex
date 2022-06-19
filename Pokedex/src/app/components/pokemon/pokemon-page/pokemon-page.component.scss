@@ -1,0 +1,24 @@
+.header {
+    cursor: pointer;
+    user-select: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+.pokemon-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.pokemon-card {
+    display: flex;
+    justify-content: center;
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+}
