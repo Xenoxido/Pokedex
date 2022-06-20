@@ -18,11 +18,11 @@ export class PokemonDetailComponent implements OnInit {
     this.sprite = (this.pokemon) ? this.pokemon.sprites.front_default : "";
   }
 
-  OnClickHeader(): void {
+  OnClickHeader(): void { // TODO
     if(!this.pokemon){
       return;
     }
-    switch(this.sprite){
+    switch(this.sprite){ 
       case this.pokemon.sprites.front_default:
         this.sprite = this.pokemon.sprites.back_default;
         break;

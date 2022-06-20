@@ -2,9 +2,12 @@
     display: flex;
     flex-direction: column;
     align-content: center;
+    align-items: center;
 
     width: max-content;
     height: max-content;
+
+    min-width: 30em;
 
     background-color: var(--main-color);
     color: var(--third-color);

@@ -24,25 +24,26 @@ export class PaginatorComponent implements OnInit {
   OnClickNext() : void {
     if(this.lastElement + this.step <= this.limitNext){
       this.lastElement += this.step;
+      this.firstElement = this.lastElement - this.step;
     }
 
     if(this.lastElement + this.step > this.limitNext){
-      this.lastElement = this.limitNext;
+      this.firstElement = this.limitPrev;
+      this.lastElement = this.firstElement + this.step;
     }
-    this.firstElement = this.lastElement - this.step;
     this.pageChanged.emit([this.firstElement, this.lastElement]);
   }
 
   OnClickPrevious() : void {
     if(this.firstElement -this.step >= this.limitPrev){
       this.firstElement -= this.step;
+      this.lastElement = this.firstElement + this.step;
     }
 
     if(this.firstElement -this.step < this.limitPrev){
-      this.firstElement = this.limitPrev;
-    }
-
-    this.lastElement = this.firstElement + this.step;
+      this.lastElement = this.limitNext;
+      this.firstElement = this.lastElement - this.step;
+    }    
     this.pageChanged.emit([this.firstElement, this.lastElement]);
   }
 
