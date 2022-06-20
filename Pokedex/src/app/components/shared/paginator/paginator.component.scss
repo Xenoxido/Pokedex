@@ -1,6 +1,8 @@
 .paginator {
     display: flex;
-    flex-direction: row
+    flex-direction: row;
+    align-items: center;
+    background-color: var(--main-color);
 }
 
 .paginator-element{
@@ -10,8 +12,15 @@
    -khtml-user-select: none;
    -moz-user-select: none;
    -ms-user-select: none;
+   filter: invert(1);
 }
 
-.paginator-arrows {
+.arrows {
     cursor: pointer;
+    width: 3em;
+    height: 3em;
+}
+
+.right {
+    transform: rotate(180deg);
 }

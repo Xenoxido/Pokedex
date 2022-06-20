@@ -1,15 +1,18 @@
 <div class="detailed-card" *ngIf="pokemon">
-    <div  class="detailed-card-header" (click)="OnClickHeader()">
-        <img class="detailed-card-img" [src]="sprite">
+    <div  class="detailed-card-header">
+        <h1>#{{pokemon.id}}</h1>
         <h1 class="detailed-card-name">{{pokemon.name}}</h1>
     </div>
+
+    <img class="detailed-card-img" [src]="sprite" (click)="OnClickHeader()">
+
     <div class="detailed-card-properties">
-        <div>
+        <div id="labels">
             <h2>Weight</h2>
             <h2>Height</h2>
             <h2>Types</h2>
         </div>
-        <div>
+        <div id="properties">
             <h2>{{pokemon.weight}}</h2>
             <h2>{{pokemon.height}}</h2>
             <h2>{{pokemon.types | convertTypes | uppercase}}</h2>

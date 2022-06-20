@@ -5,8 +5,11 @@
     border-width: 0.2em;
     border-style: solid;
     border-radius: 10%;
-    border-color: black;
     text-align: center;
+
+    background-color: var(--main-color);
+    color: var(--third-color);
+    border-color: black;
     
     cursor: pointer;
     user-select: none;

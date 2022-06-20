@@ -6,7 +6,10 @@
     width: max-content;
     height: max-content;
 
-    padding: 8em;
+    background-color: var(--main-color);
+    color: var(--third-color);
+
+    padding: 4em;
 
     user-select: none;
     -webkit-user-select: none;
@@ -24,6 +27,11 @@
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: center;
+    
+    > h1 {
+        padding: 0 0.8em;
+    }
 }
 
 .detailed-card-img {
@@ -39,4 +47,19 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+
+    > #labels {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0 0.5em;
+    }
+
+    > #properties {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        padding: 0 0.8em;
+
+    }
 }

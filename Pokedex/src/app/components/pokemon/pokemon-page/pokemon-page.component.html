@@ -1,14 +1,14 @@
-<div class="header" (click)="OnClickTitle()">  <!--Header-->
-    <h1>Pokemon List</h1>
+<div class="header">  <!--Header-->
+    <img class="pokedex-icon" src="../../../../assets/pokedex-button.jpg" (click)="OnClickTitle()">
 </div>
 
-<div> <!--Body-->
+<div class="body"> <!--Body-->
     <h2 *ngIf="loading"> Loading...</h2>
     <div class="pokemon-list" *ngIf="!loading && !showDetail" >
         <app-pokemon-card *ngFor="let pokemon of pokeList" [pokemon]="pokemon" (selectPokemon)="OnClickPokemon($event)"></app-pokemon-card>
     </div>
 
-    <div class="pokemon-card" *ngIf="!loading && showDetail">
+    <div class="pokemon-detail" *ngIf="!loading && showDetail">
         <app-pokemon-detail [pokemon]="pokemonSelected"></app-pokemon-detail>
     </div>
 </div>

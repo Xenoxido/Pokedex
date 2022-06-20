@@ -1,4 +1,8 @@
 .header {
+    background-color: var(--main-color);
+}
+.pokedex-icon {
+    width: 9em;
     cursor: pointer;
     user-select: none;
     -webkit-user-select: none;
@@ -7,18 +11,27 @@
     -ms-user-select: none;
 }
 
+.body {
+    background-color: var(--secondary-color);
+}
+
 .pokemon-list {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
 }
 
-.pokemon-card {
+.pokemon-detail {
     display: flex;
     justify-content: center;
+
+    > app-pokemon-detail{
+        margin: 0.5em;
+    }
 }
 
 .footer {
     display: flex;
     justify-content: center;
+    background-color: var(--main-color);
 }
