@@ -11,30 +11,26 @@ export class PokemonDetailComponent implements OnInit {
   @Input() pokemon: PokemonDetail | undefined ;
 
   public sprite: string = "";
+  private sprites: string[] = [];
+  private spritesIndex: number = 0;
+
+  private notFoundImagePath: string = '../../../../assets/unownQuestion.png'
 
   constructor() { }
 
   ngOnInit(): void {
-    this.sprite = (this.pokemon) ? this.pokemon.sprites.front_default : "";
+    // Initialise sprite array
+    (this.pokemon?.sprites.front_default) ? this.sprites.push(this.pokemon.sprites.front_default) : this.sprites.push(this.notFoundImagePath);
+    (this.pokemon?.sprites.back_default) ? this.sprites.push(this.pokemon.sprites.back_default) : this.sprites.push(this.notFoundImagePath);
+    (this.pokemon?.sprites.front_shiny) ? this.sprites.push(this.pokemon.sprites.front_shiny) : this.sprites.push(this.notFoundImagePath);
+    (this.pokemon?.sprites.back_shiny) ? this.sprites.push(this.pokemon.sprites.back_shiny) : this.sprites.push(this.notFoundImagePath);
+
+    this.sprite = this.sprites[this.spritesIndex];
   }
 
-  OnClickHeader(): void { // TODO
-    if(!this.pokemon){
-      return;
-    }
-    switch(this.sprite){ 
-      case this.pokemon.sprites.front_default:
-        this.sprite = this.pokemon.sprites.back_default;
-        break;
-      case this.pokemon.sprites.back_default:
-        this.sprite = this.pokemon.sprites.front_shiny;
-        break;
-      case this.pokemon.sprites.front_shiny:
-        this.sprite = this.pokemon.sprites.back_shiny;
-        break;
-      default:
-        this.sprite = this.pokemon.sprites.front_default;
-    }
+  OnClickHeader(): void {
+    this.spritesIndex = (this.spritesIndex + 1) % this.sprites.length;
+    this.sprite = this.sprites[ this.spritesIndex ];
   }
 
 }
