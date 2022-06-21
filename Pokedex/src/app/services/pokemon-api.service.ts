@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 import { PokemonDetail, PokemonPreview } from '../models/pokemon';
 
 
@@ -15,7 +16,8 @@ export class PokemonApiService {
     return this._http.get<PokemonDetail>(url);
   }
 
-  getPokemonList(first: number, limit: number): Observable<any>{
-    return this._http.get<any>(`https://pokeapi.co/api/v2/pokemon?limit=${limit}&offset=${first}`);
+  getPokemonList(first: number, limit: number): Observable<PokemonPreview[]>{
+    return this._http.get<any>(`https://pokeapi.co/api/v2/pokemon?limit=${limit}&offset=${first}`)
+      .pipe(map((data) => { return data.results}));
   }
 }

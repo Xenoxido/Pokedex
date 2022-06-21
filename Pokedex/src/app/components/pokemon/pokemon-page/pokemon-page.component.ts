@@ -30,10 +30,7 @@ export class PokemonPageComponent implements OnInit {
   getPokemonPreviewList(limit: number, perPage: number) {
     this.loading = true;
     this._pokeApi.getPokemonList(limit,perPage).subscribe((res)=>{
-      this.pokeList = [];
-      for(let preview of res.results){
-        this.pokeList.push(preview as PokemonPreview);
-      }
+      this.pokeList = res;
       this.loading = false;
       console.log(this.pokeList);
     });
