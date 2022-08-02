@@ -36,6 +36,10 @@ export class PokemonPageComponent implements OnInit {
     });
   }
 
+  filterByName(name:string):void{
+    this.pokeList.filter((pkm)=> pkm.name === name);
+  }
+
   OnrefreshPokemonList(limits:number[]):void {
     this.first = limits[0];
     this.getPokemonPreviewList(this.first,this.pokemonPerPage);

@@ -3,6 +3,13 @@
 </div>
 
 <div class="body"> <!--Body-->
+    <div class="pokemon-filters" *ngIf="!loading && !showDetail">
+        <div class="filter-name">
+            <h3>Filter by name:</h3>
+            <input *ngModelChange="filterByName($event)">
+        </div>
+    </div> <!-- Filters -->
+
     <h2 *ngIf="loading"> Loading...</h2>
     <div class="pokemon-list" *ngIf="!loading && !showDetail" >
         <app-pokemon-card *ngFor="let pokemon of pokeList" [pokemon]="pokemon" (selectPokemon)="OnClickPokemon($event)"></app-pokemon-card>

@@ -15,6 +15,30 @@
     background-color: var(--secondary-color);
 }
 
+.pokemon-filters {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+
+    background-color: var(--main-color);
+}
+
+.filter-name {
+    display: flex;
+    flex-direction: row;
+
+    > h3 {
+        color: var(--third-color);
+        padding-right: 1em;
+    }
+
+    > input {
+        font-size: 1.5em;
+        max-width: 6em;
+        
+    }
+}
+
 .pokemon-list {
     display: flex;
     flex-direction: row;
